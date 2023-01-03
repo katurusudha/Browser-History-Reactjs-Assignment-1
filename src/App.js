@@ -1,4 +1,5 @@
 import './App.css'
+import {Component} from 'react'
 
 // These are the list used in the application. You can move them to any component needed.
 const initialHistoryList = [
@@ -136,11 +137,7 @@ class App extends Component {
           {!isTrue && (
             <ul className="inner-holder">
               {newHistoryList.map(eachObject => (
-                <li
-                  key={eachObject.id}
-                  uniqueId={eachObject.id}
-                  className="items-holder"
-                >
+                <li key={eachObject.id} className="items-holder">
                   <p className="time">{eachObject.timeAccessed}</p>
                   <div className="icon-holder">
                     <img
@@ -155,8 +152,8 @@ class App extends Component {
                   </div>
                   <button
                     className="delete-button"
-                    testid="delete"
                     type="button"
+                    data-testid="delete"
                     onClick={() => this.FillFunction(eachObject.id)}
                   >
                     <img
